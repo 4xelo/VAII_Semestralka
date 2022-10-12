@@ -5,10 +5,11 @@
 }
 body {
     background-image: url("https://img.freepik.com/free-vector/gradient-futuristic-cyber-background_23-2149116407.jpg?w=1480&t=st=1665611800~exp=1665612400~hmac=71cbb5a12ef594b0e9bc5f090d945b563a6b64970ada9a38d48576db54e4ef5a");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: cover ;
+    background-repeat: repeat;
     height: 100vh;
-    color: darkgrey    ;
+    width: 100vw;
+    color: darkgrey ;
 }
 header {
     position: fixed;
@@ -19,6 +20,20 @@ header {
 }
 .container , .text ,.projekty{
     padding-top: 5em;
+}
+.text h1 {
+    color: goldenrod;   
+    font-weight: bolder;
+    font-size: 24px;
+}
+.text h2 {
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 30px;
+}
+.text p {
+    font-size: 14px;
+    padding-left: 50px;
 }
 .nadpis {
     margin-top: 1em;
@@ -60,6 +75,7 @@ h5{
 h1 ,h3{
     margin-left: 20px;
 }
+.te
 .kontakt {
     font-weight: bold;
 }
