@@ -31,6 +31,17 @@ header {
     font-size: 18px;
     padding-left: 30px;
 }
+.dotazy .row{
+
+    padding: 10px;
+}
+.submit {
+    left: 40px;
+}
+#contact-form button {
+    left: 30px;
+}
+
 .text p {
     font-size: 14px;
     padding-left: 50px;
