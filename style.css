@@ -3,6 +3,7 @@
     font-size: 2em ;
     font-family: ".SF NS", serif;
 }
+
 header {
     position: fixed;
     width: 100vw;
@@ -10,4 +11,28 @@ header {
 }
 .container{
     padding-top: 5em;
+}
+
+.navbar li:hover  {
+    background-color: teal;
+}
+.logBut:hover {
+    text-decoration: red;
+}
+.row{
+    text-align: justify;
+    padding:5em;
+}
+.udaje {
+    color: red;
+    text-align: start;
+}
+
+h5{
+    font-family: "Andale Mono";
+    font-size: larger;
+    color: teal;
+}
+.kontakt {
+    font-weight: bold;
 }
