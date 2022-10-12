@@ -35,7 +35,7 @@
                     <ul class="navbar nav ms-auto">
 
                         <form class="container-fluid justify-content-end">
-                            <button class="btn btn-outline-success me-2" type="button">Login</button>
+                            <button class="btn btn-outline-success me-2" type="button" data-bs-toggle="modal" data-bs-target="#login">Login</button>
                         </form>
 
                     </ul>
@@ -43,7 +43,10 @@
             </div>
         </nav>
     </div>
+
 </header>
+
+
 
 <div class="container mt-auto" id="main">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum consectetur tempor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin pulvinar consequat nisl, id dignissim magna porttitor in. Fusce cursus ante quis vehicula vestibulum. Nulla facilisi. Mauris vitae velit euismod lacus semper suscipit. Mauris volutpat interdum mi, vitae consectetur mi mollis vitae. Sed volutpat lorem diam, vel mollis dolor sollicitudin at. Aliquam erat volutpat. Aenean vel euismod enim, quis viverra nulla.
@@ -62,4 +65,34 @@
     Quisque pretium mi et nunc finibus varius. Integer at dui eu enim dictum ultrices. Morbi eu nibh ac metus mollis iaculis. Donec eu feugiat ante, ac ullamcorper lectus. Duis commodo lacus sed facilisis pretium. Ut laoreet tortor ut nisl posuere euismod. Suspendisse potenti. Fusce ut neque tortor. Suspendisse vulputate, eros id finibus interdum, sem nibh sodales augue, quis fringilla massa turpis ac nulla. Nullam elementum porttitor arcu, vel gravida leo mollis in.
 </div>
 </body>
+
+<div class="modal fade" id="login" tabindex="-1" aria-labelledby=".nav" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content rounded-5 shadow">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <!-- <h1 class="modal-title fs-5" >Modal title</h1> -->
+                <h1 class="fw-bold mb-0 fs-2">Sign up for free</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="logBut modal-body p-3 pt-0" >
+                <form class="">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control rounded-3" id="floatingEmail" placeholder="name@example.com">
+                        <label for="floatingEmail">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3" >
+                        <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <button class="w-100 mb-2 btn btn-lg rounded-0 bg-dark text-bg-dark" type="submit">Sign up</button>
+                    <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+                    <hr class="my-4">
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 </html>
