@@ -1,3 +1,13 @@
-.nav {
-    background-color: #0E041E !important;
+
+.navbar-brand  {
+    font-size: 2em ;
+    font-family: ".SF NS", serif;
+}
+header {
+    position: fixed;
+    width: 100vw;
+    max-height: 4vh;
+}
+.container{
+    padding-top: 5em;
 }
