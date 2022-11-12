@@ -42,4 +42,11 @@ class HomeController extends AControllerBase
     public function contact() {
         return $this->html();
     }
+    /**
+     * Example of an action accessible without authorization
+     * @return \App\Core\Responses\ViewResponse
+     */
+    public function about() {
+        return $this->html();
+    }
 }

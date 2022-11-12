@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet">
+    <link href="public/css/style.css" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <title>Compote.eu</title>
@@ -14,20 +15,20 @@
     <div>
         <nav class="navbar navbar-expand-md navbar-dark bg-black" id=".nav" >
             <div class="container-fluid">
-                <a class="navbar-brand" href="mainScreen.html"><img src="public/images/bloc_logo_small_1.png" width="45" height="45" alt="logo"></a>
+                <a class="navbar-brand" href="?c=home&a=index"><img src="/public/images/bloc_logo_small_1.png" width="45" height="45" alt="logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#zoznam" aria-controls="zoznam" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="zoznam">
                     <ul class="navbar-nav me-auto ">
                         <li class="nav-item">
-                            <a class="nav-link" href="aboutUs.html">O nas</a>
+                            <a class="nav-link" href="?c=home&a=about">O nas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="projects.html"> Projekty</a>
+                            <a class="nav-link" href="?c=projects"> Projekty</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html"> Kontakt</a>
+                            <a class="nav-link" href="?c=home&a=contact"> Kontakt</a>
                         </li>
                     </ul>
                     <a class="navbar-brand me-5"> COMPOTE </a>
@@ -50,24 +51,24 @@
     <h1 >Kto Sme?</h1>
     <h2 >humble</h2>
     <p>We are confident in own strengths and aware of own weakness.<br>
-    We are constantly aiming for self-improvement.</p>
+We are constantly aiming for self-improvement.</p>
     <h2 >respect stakeholder</h2>
     <p>We respect people and believe in transparency.<br>
-    Openly and honestly communicating, actively listening and challengin ideas to achieve the best outcame.</p>
+Openly and honestly communicating, actively listening and challengin ideas to achieve the best outcame.</p>
     <h2 >take ownership</h2>
     <p>We are honest ,and we take responsibility for ourselves, our team, our company and our actions.<br>
-    We are accountable for the results and take ownership for our mistakes.<br>
-    We are ready to make bold moves and decisions.</p>
+We are accountable for the results and take ownership for our mistakes.<br>
+We are ready to make bold moves and decisions.</p>
     <h2>encourage teamwork</h2>
     <p> We are one team with a commitment to one another, to a common goal and to a common vision.<br>
-    We complement and support one another.<br>
-        We are clear about expectations, enjoy what we do and celebrate our achievements as a team.</p>
+We complement and support one another.<br>
+We are clear about expectations, enjoy what we do and celebrate our achievements as a team.</p>
     <h2 >efficient</h2>
     <p>We use time to our advantage.<br>
-        We keep things simple, do the work that adds value and avoid wasting of energy or time.</p>
+We keep things simple, do the work that adds value and avoid wasting of energy or time.</p>
     <h2>deliver excellence</h2>
     <p>We strive to be innovative and aim for continuous improvement.<br>
-        We accept challenges, manage risks and timely deliver our commitments.</p>
+We accept challenges, manage risks and timely deliver our commitments.</p>
     <h1 >Co robime?</h1>
     <h2 >early engagement</h2>
     <p>Solution consulting<br>
@@ -99,12 +100,12 @@
     <h1 >Preco sme najlepsia volba?</h1>
     <h2 >knowledge and experience</h2>
     <p>Broad technology and service portfolio.<br>
-        Long term experience in Global SW service companies.<br>
-        Strong network of engineers and IT companies.</p>
+Long term experience in Global SW service companies.<br>
+Strong network of engineers and IT companies.</p>
     <h2 >customer orientation</h2>
     <p>Close cooperation with our clients from Day 1. <br>
         We listen to our clients and propose solutions. <br>
-        Building trust and long term cooperation.</p>
+Building trust and long term cooperation.</p>
     <h2 >effectiveness & flexibility</h2>
     <p>Time and cost efficiency <br>
         Flexibility in team sizing <br>
@@ -115,8 +116,8 @@
         Quality Management System</p>
     <h2 >reliability</h2>
     <p>Our solutions meet client expectations. <br>
-        Reliable software and hardware. <br>
-        On time delivery within budget. </p>
+Reliable software and hardware. <br>
+On time delivery within budget. </p>
     <h1 >Ako spolupracujeme?</h1>
     <h2 >expectations and needs</h2>
     <h2 >requirements maturity</h2>
@@ -142,7 +143,7 @@
                     <div class="form-floating mb-3">
                         <input>"email" class="form-control rounded-3" id="floatingEmail" placeholder="name@example.com">
                          for="floatingEmail">Email address
-                    </div>
+</div>
                     <div class="form-floating mb-3" >
                         <input> "password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
                          for="floatingPassword">Password
@@ -158,7 +159,7 @@
 <div class="footer">
     <footer class="bg-dark text-center text-lg-start text-white">
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-            © 2022 Copyright:
+    © 2022 Copyright:
             <a class="text-white" href="https://compote.eu/">compote.eu</a>
         </div>
     </footer>

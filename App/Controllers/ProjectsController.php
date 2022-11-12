@@ -13,7 +13,7 @@ class ProjectsController extends \App\Core\AControllerBase
     public function index()
     {
         $projects = Project::getAll();
-        $this->html($projects);
+        return $this->html($projects);
 
 
     }
