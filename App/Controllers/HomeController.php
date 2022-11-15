@@ -16,7 +16,7 @@ class HomeController extends AControllerBase
      * @param $action
      * @return bool
      */
-    public function authorize($action)
+    /*public function authorize($action)
     {
         switch ($action) {
             case "contact":
@@ -24,8 +24,7 @@ class HomeController extends AControllerBase
             default:
                 return $this->app->getAuth()->isLogged();
         }
-    }
-
+    }*/
     /**
      * Example of an action (authorization needed)
      * @return \App\Core\Responses\Response|\App\Core\Responses\ViewResponse

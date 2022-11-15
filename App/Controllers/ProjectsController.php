@@ -8,13 +8,72 @@ class ProjectsController extends \App\Core\AControllerBase
 {
 
     /**
+     * Authorize controller actions
+     * @param $action
+     * @return bool
+     */
+    public function authorize($action)
+    {
+        switch ($action) {
+            case "edit":
+            case "create":
+            case "store":
+            case "delete":
+                return $this->app->getAuth()->isLogged();
+
+        }
+        return true;
+    }
+    /**
      * @inheritDoc
      */
     public function index()
     {
         $projects = Project::getAll();
         return $this->html($projects);
+    }
+    public function project() {
+        return $this->html();
+    }
+
+    public function delete() {
+
+        $id = $this->request()->getValue('id');
+
+
+        $projectToDelete = Project::getOne($id);
+        if ($projectToDelete) {
+            $projectToDelete->delete();
+        }
+        return $this->redirect("?c=projects");//po vymazani prvku sa vratim do zoznamu projectov
+    }
+    public function store() {
+
+        $id = $this->request()->getValue('id');
+
+
+        $project = ( $id ? Project::getOne($id) : new Project());
+        if ($this->request()->getValue('text')) {
+            $project->setTitle($this->request()->getValue('text'));
+        } else {
+            return $this->redirect("?c=projects&a=create");
+        }
+
+        $project->save();
 
 
     }
+    public function create() {
+
+        return $this->html(new Project(), viewName: 'create.form');
+    }
+
+    public function edit() {
+
+        $id = $this->request()->getValue('id');
+
+        $projectToEdit = Project::getOne($id);
+        return $this->html($projectToEdit, viewName: 'create.form');
+    }
+
 }

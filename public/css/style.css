@@ -5,6 +5,11 @@
     font-size: 2em ;
     font-family: ".SF NS", serif;
 }
+/*body.auth {*/
+/*    background-size: cover;*/
+/*    background-color: black;*/
+/*    background-image: none;*/
+/*}*/
 body {
     background-image: url("https://img.freepik.com/free-vector/gradient-futuristic-cyber-background_23-2149116407.jpg?w=1480&t=st=1665611800~exp=1665612400~hmac=71cbb5a12ef594b0e9bc5f090d945b563a6b64970ada9a38d48576db54e4ef5a");
     background-size: cover ;
@@ -63,6 +68,11 @@ header {
     text-align: justify;
     padding:5em;
 }
+.udaje:hover {
+    color: goldenrod;
+    transform: scale(1.2);
+    transform-origin: 50% 50%;
+}
 .adresa:hover {
     color: goldenrod;
     transform: scale(1.2);
@@ -74,11 +84,13 @@ header {
     bottom: 0;
     width: 100vw;
 }
+/*
 .udaje {
 
     text-align: start;
     font-family: "Al Bayan ", sans-serif;
 }
+*/
 
 h5{
     font-family: "Andale Mono", sans-serif;

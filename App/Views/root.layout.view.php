@@ -13,34 +13,48 @@
             integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
             integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="public/css/styl.css">
-    <script src="public/js/script.js"></script>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <script src="/public/js/script.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="?c=home">
-            <img src="/public/images/vaiicko_logo.png" title="<?= \App\Config\Configuration::APP_NAME ?>" title="<?= \App\Config\Configuration::APP_NAME ?>">
-        </a>
-        <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="?c=home&a=contact">Kontakt</a>
-            </li>
-        </ul>
-        <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="?c=projects">Projekt</a>
-            </li>
-        </ul>
-        <?php if ($auth->isLogged()) { ?>
-            <span class="navbar-text">Prihlásený používateľ: <b><?= $auth->getLoggedUserName() ?></b></span>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="?c=auth&a=logout">Logout</a>
-                </li>
-            </ul>
-        <?php } ?>
-    </div>
+    <header>
+        <div>
+            <nav class="navbar navbar-expand-md navbar-dark bg-black" id=".nav" >
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="?c=home&a=index"><img src="/public/images/bloc_logo_small_1.png" width="45" height="45" alt="logo"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#zoznam" aria-controls="zoznam" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="zoznam">
+                        <ul class="navbar-nav me-auto ">
+                            <li class="nav-item">
+                                <a class="nav-link" href="?c=home&a=index">O nas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="?c=projects"> Projekty</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="?c=home&a=contact"> Kontakt</a>
+                            </li>
+                        </ul>
+                        <a class="navbar-brand me-5"> COMPOTE </a>
+
+                        <ul class="navbar nav ms-auto">
+                            <?php if ($auth->isLogged()) { ?>
+                            <li class="container-fluid justify-content-end">
+                                <a class="nav-link" href="?c=auth&a=logout">Logout</a>
+                            </li>
+                            <?php } else { ?>
+                            <a class="nav-link" href="?c=auth&a=login">Login</a>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    </header>
 </nav>
 <div class="container-fluid mt-3">
     <div class="web-content">

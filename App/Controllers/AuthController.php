@@ -32,7 +32,7 @@ class AuthController extends AControllerBase
         if (isset($formData['submit'])) {
             $logged = $this->app->getAuth()->login($formData['login'], $formData['password']);
             if ($logged) {
-                return $this->redirect('?');
+                return $this->redirect('?c=home');
             }
         }
 
@@ -42,11 +42,11 @@ class AuthController extends AControllerBase
 
     /**
      * Logout a user
-     * @return \App\Core\Responses\ViewResponse
+     * @return \App\Core\Responses\ViewResponse|\App\Core\Responses\RedirectResponse
      */
     public function logout()
     {
         $this->app->getAuth()->logout();
-        return $this->html(viewName: 'logout');
+        return $this->redirect('?c=home');
     }
 }

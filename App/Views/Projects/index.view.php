@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+
+<?php
+/** @var \App\Core\IAuthenticator $auth */
+?>
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,41 +14,6 @@
 </head>
 <body>
 
-<header>
-    <div>
-        <nav class="navbar navbar-expand-md navbar-dark bg-black" id=".nav" >
-            <div class="container-fluid">
-                <a class="navbar-brand" href="?c=home&a=index"><img src="/public/images/bloc_logo_small_1.png" width="45" height="45" alt="logo"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#zoznam" aria-controls="zoznam" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="zoznam">
-                    <ul class="navbar-nav me-auto ">
-                        <li class="nav-item">
-                            <a class="nav-link" href="?c=home&a=about">O nas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="?c=projects"> Projekty</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="?c=home&a=contact"> Kontakt</a>
-                        </li>
-                    </ul>
-                    <a class="navbar-brand me-5"> COMPOTE </a>
-
-                    <ul class="navbar nav ms-auto">
-
-                        <li class="container-fluid justify-content-end">
-                            <button class="btn btn-outline-success me-2" type="button" data-bs-toggle="modal" data-bs-target="#login">Login</button>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-
-</header>
 <div class="modal fade" id="login" tabindex="-1" aria-labelledby=".nav" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content rounded-5 shadow">
@@ -72,162 +41,42 @@
     </div>
 </div>
 
+
 <div class="projekty">
-    <h3 class="nadpis">Nase projekty:</h3>
-    <div class="row row-cols-3 row-cols-md-6 g-3">
-        <div class="project-col p-3">
-            <div class="card" >
-                <a href="?c=home&a=index">
-                    <img src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png" class="card-img-top" alt="Nenaloadovalo">
-                </a>
-                <div class="card-body">
-                    <h2 class="card-title">Project_1</h2>
-                    <p class="card-text">Description_1. </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-col p-3">
-            <div class="card" >
-                <a href="?c=home&a=index">
-                    <img src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png" class="card-img-top"  alt="Nenaloadovalo">
-                </a>
-                <div class="card-body">
-                    <h2 class="card-title">Project_2</h2>
-                    <p class="card-text">Description_2.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="project-col p-3">
-            <div class="card " >
-                <a href="?c=home&a=index">
-                    <img src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png" class="card-img-top"  alt="Nenaloadovalo">
-                </a>
-                <div class="card-body">
-                    <h2 class="card-title">Project_2</h2>
-                    <p class="card-text">Description_2.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="project-col p-3">
-            <div class="card " >
-                <a href="?c=home&a=index">
-                    <img src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png" class="card-img-top"  alt="Nenaloadovalo">
-                </a>
-                <div class="card-body">
-                    <h2 class="card-title">Project_2</h2>
-                    <p class="card-text">Description_2.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="project-col p-3">
-            <div class="card " >
-                <a href="?c=home&a=index">
-                    <img src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png" class="card-img-top"  alt="Nenaloadovalo">
-                </a>
-                <div class="card-body">
-                    <h2 class="card-title">Project_2</h2>
-                    <p class="card-text">Description_2.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="project-col p-3">
-            <div class="card " >
-                <a href="?c=home&a=index">
-                    <img src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png" class="card-img-top"  alt="Nenaloadovalo">
-                </a>
-                <div class="card-body">
-                    <h2 class="card-title">Project_2</h2>
-                    <p class="card-text">Description_2.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="project-col p-3">
-            <div class="card " >
-                <a href="?c=home&a=index">
-                    <img src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png" class="card-img-top"  alt="Nenaloadovalo">
-                </a>
-                <div class="card-body">
-                    <h2 class="card-title">Project_2</h2>
-                    <p class="card-text">Description_2.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="project-col p-3">
-            <div class="card " >
-                <a href="?c=home&a=index">
-                    <img src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png" class="card-img-top"  alt="Nenaloadovalo">
-                </a>
-                <div class="card-body">
-                    <h2 class="card-title">Project_2</h2>
-                    <p class="card-text">Description_2.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="project-col p-3">
-            <div class="card " >
-                <a href="?c=home&a=index">
-                    <img src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png" class="card-img-top"  alt="Nenaloadovalo">
-                </a>
-                <div class="card-body">
-                    <h2 class="card-title">Project_2</h2>
-                    <p class="card-text">Description_2.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="project-col p-3">
-            <div class="card " >
-                <a href="?c=home&a=index">
-                    <img src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png" class="card-img-top"  alt="Nenaloadovalo">
-                </a>
-                <div class="card-body">
-                    <h2 class="card-title">Project_2</h2>
-                    <p class="card-text">Description_2.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="project-col p-3">
-            <div class="card " >
-                <a href="?c=home&a=index">
-                    <img src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png" class="card-img-top"  alt="Nenaloadovalo">
-                </a>
-                <div class="card-body">
-                    <h2 class="card-title">Project_2</h2>
-                    <p class="card-text">Description_2.</p>
-                </div>
-
-            </div>
-        </div>
-
+    <div >
+        <?php if ($auth->isLogged()) { ?>
+        <a href="?c=projects&a=create " class="btn btn-success">Create project</a>
+        <?php } ?>
     </div>
 </div>
+    <h3 class="nadpis">Nase projekty:</h3>
+    <div class="projects-container mt-2">
+            <?php
+            use \App\Models\Project;
+            /** @var Project[] $data */
+            foreach ($data as $project) {
+            ?>
+        <div >
+            <a class="card mt-2" href="?c=projects&a=project" >
 
-<div class="footer">
-    <footer class="bg-dark text-center text-lg-start text-white">
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-            © 2022 Copyright:
-            <a class="text-white" href="https://compote.eu/">compote.eu</a>
+                <?php if($project->getImg()) { ?>
+                <img src="<?php echo $project->getImg() ?>" class="card-img-top" alt="...">
+                <?php } ?>
+
+                    <h5 class="card-title "><?php echo $project->getTitle()?></h5>
+
+                    <?php if ($auth->isLogged()) { ?>
+                    <a href="?c=projects&a=delete&id=<?php echo $project->getId() ?>"  class="btn btn-danger  ">Delete</a>
+                    <a href="?c=projects&a=edit&id=<?php echo $project->getId() ?>"  class="btn btn-info">Edit</a>
+                    <?php } ?>
+
+
+            </a>
         </div>
-    </footer>
-</div>
+    </div>
+
+<?php } ?>
+
 
 </body>
 </html>
