@@ -3,16 +3,9 @@
 /** @var \App\Core\IAuthenticator $auth */
 ?>
 ?>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link href="/public/css/style.css" rel="stylesheet">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <title>Compote.eu</title>
-</head>
-<body>
+
+
 
 <div class="modal fade" id="login" tabindex="-1" aria-labelledby=".nav" aria-hidden="true">
     <div class="modal-dialog">
@@ -57,26 +50,34 @@
             foreach ($data as $project) {
             ?>
         <div >
-            <a class="card mt-2" href="?c=projects&a=project" >
+            <ul class="card mt-2"  >
 
                 <?php if($project->getImg()) { ?>
                 <img src="<?php echo $project->getImg() ?>" class="card-img-top" alt="...">
                 <?php } ?>
 
+                <li>
                     <h5 class="card-title "><?php echo $project->getTitle()?></h5>
+                    <a href="?c=projects&a=project"><?php echo $project->getTitle()?></a>
+                </li>
 
-                    <?php if ($auth->isLogged()) { ?>
-                    <a href="?c=projects&a=delete&id=<?php echo $project->getId() ?>"  class="btn btn-danger  ">Delete</a>
+
+                <?php if ($auth->isLogged()) { ?>
+                    <li>
+                        <a href="?c=projects&a=delete&id=<?php echo $project->getId() ?>"  class="btn btn-danger  ">Delete</a>
+                    </li>
+                <li>
                     <a href="?c=projects&a=edit&id=<?php echo $project->getId() ?>"  class="btn btn-info">Edit</a>
-                    <?php } ?>
+                </li>
 
+                <?php } ?>
 
-            </a>
+            </ul>
         </div>
-    </div>
 
 <?php } ?>
-
-
+    </div>
+</div>
+</div>
 </body>
-</html>
+
