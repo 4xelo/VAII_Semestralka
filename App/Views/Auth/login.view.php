@@ -21,7 +21,8 @@ $layout = 'auth';
                         <div class="form-label-group mb-3">
                             <input name="password" type="password" id="password" class="form-control  m-4 w-75"
                                    placeholder="Password" required>
-                        <div class="text-center">
+                        </div>
+                        <div class="text-center mt-4 mb-4">
                             <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="submit">Prihlásiť
                             </button>
                             <div class="text-center">Don't have an account? <a href="?c=auth&a=register">Register Here</a></div>
@@ -32,4 +33,6 @@ $layout = 'auth';
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
