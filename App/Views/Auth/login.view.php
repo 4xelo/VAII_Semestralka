@@ -12,6 +12,7 @@ $layout = 'auth';
                         <?= @$data['message'] ?>
                     </div>
                     <form class="form-signin" method="post" action="?c=auth&a=login">
+
                         <div class="form-label-group mb-3">
                             <input name="login" type="text" id="login" class="form-control m-4 w-75" placeholder="Login"
                                    required autofocus>
