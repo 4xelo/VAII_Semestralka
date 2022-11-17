@@ -57,8 +57,7 @@
                 <?php } ?>
 
                 <li>
-                    <h5 class="card-title "><?php echo $project->getTitle()?></h5>
-                    <a href="?c=projects&a=project"><?php echo $project->getTitle()?></a>
+                    <a class="card-title" href="?c=projects&a=project"><?php echo $project->getTitle()?></a>
                 </li>
 
 

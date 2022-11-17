@@ -9,6 +9,8 @@ class Project extends Model
     protected $id;
     protected $title;
     protected $img;
+    protected $prjdesc;
+    protected $technologies;
 
     /**
      * @return mixed
@@ -56,6 +58,38 @@ class Project extends Model
     public function setImg($img): void
     {
         $this->img = $img;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrjdesc()
+    {
+        return $this->prjdesc;
+    }
+
+    /**
+     * @param mixed $prjdesc
+     */
+    public function setPrjdesc($prjdesc): void
+    {
+        $this->prjdesc = $prjdesc;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTechnologies()
+    {
+        return $this->technologies;
+    }
+
+    /**
+     * @param mixed $technologies
+     */
+    public function setTechnologies($technologies): void
+    {
+        $this->technologies = $technologies;
     }
 
 

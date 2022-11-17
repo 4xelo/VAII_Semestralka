@@ -53,14 +53,20 @@ class ProjectsController extends \App\Core\AControllerBase
 
 
         $project = ( $id ? Project::getOne($id) : new Project());
-        if ($this->request()->getValue('text')) {
-            $project->setTitle($this->request()->getValue('text'));
+        if ($this->request()->getValue('title')) {
+            $project->setTitle($this->request()->getValue('title'));
+            if ($this->request()->getValue('projdesc')) {
+                $project->setPrjdesc($this->request()->getValue('projdesc'));
+                if ($this->request()->getValue('technologies')) {
+                    $project->setTechnologies($this->request()->getValue('technologies'));
+                }
+            }
         } else {
             return $this->redirect("?c=projects&a=create");
         }
 
         $project->save();
-
+        return $this->redirect("?c=projects");
 
     }
     public function create() {

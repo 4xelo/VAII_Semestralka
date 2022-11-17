@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\App;
 use App\Core\AControllerBase;
 
+
 /**
  * Class AuthController
  * Controller for authentication actions
@@ -49,4 +50,23 @@ class AuthController extends AControllerBase
         $this->app->getAuth()->logout();
         return $this->redirect('?c=home');
     }
+    /**
+     * Register a user
+     * @return \App\Core\Responses\RedirectResponse|\App\Core\Responses\ViewResponse
+     */
+    public function register() {
+
+        $formData = $this->app->getRequest()->getPost();
+        $registered = null;
+        if (isset($formData['submit'])) {
+            $registered = $this->app->getAuth()->register($formData['email'], $formData['login'],$formData['password'], $formData['cpassword']);
+            if ($registered) {
+                return $this->redirect('?c=auth&a=login');
+            }
+        }
+
+        return $this->html();
+    }
+
+
 }

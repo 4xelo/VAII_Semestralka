@@ -6,8 +6,18 @@
             <input type="hidden" name="id" value="<?php echo $data->getId() ?>">
             <?php } ?>
             <label>
-                Text:
-                <input type="text" name="text" value="<?php echo $data->getTitle() ?>">
+                Title:
+                <input type="text" name="title" value="<?php echo $data->getTitle() ?>">
+
+            </label>
+            <label>
+                Project Description:
+                <input type="text" name="projdesc" value="<?php echo $data->getPrjdesc() ?>">
+
+            </label>
+            <label>
+                Technologies:
+                <input type="text" name="technologies" value="<?php echo $data->getTechnologies() ?>">
 
             </label>
 
