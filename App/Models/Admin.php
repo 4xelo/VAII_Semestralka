@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
-class Admin extends \App\Core\Model implements \Countable
+class Admin extends \App\Core\Model
 {
+
     protected $id;
     protected $email;
     protected $login;
     protected $password;
+
     /**
      * @return mixed
      */
@@ -22,22 +24,6 @@ class Admin extends \App\Core\Model implements \Countable
     public function setId($id): void
     {
         $this->id = $id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param mixed $email
-     */
-    public function setEmail($email): void
-    {
-        $this->email = $email;
     }
 
     /**
@@ -70,6 +56,22 @@ class Admin extends \App\Core\Model implements \Countable
     public function setPassword($password): void
     {
         $this->password = $password;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email): void
+    {
+        $this->email = $email;
     }
 
 }
