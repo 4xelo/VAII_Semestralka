@@ -7,7 +7,7 @@ $layout = 'auth';
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div class="card card-signin my-5">
                 <div class="card-body p-3">
-                    <h5 class="card-title text-center mt-4">Prihlásenie</h5>
+                    <h5 class="card-title text-center mt-4">Login</h5>
                     <div class="text-center text-danger mb-3">
                         <?= @$data['message'] ?>
                     </div>
@@ -23,7 +23,7 @@ $layout = 'auth';
                                    placeholder="Password" required>
                         </div>
                         <div class="text-center mt-4 mb-4">
-                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="submit">Prihlásiť
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="submit">Submit
                             </button>
                             <div class="text-center">Don't have an account? <a href="?c=auth&a=register">Register Here</a></div>
 
