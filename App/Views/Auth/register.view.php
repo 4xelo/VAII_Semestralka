@@ -2,52 +2,7 @@
 $layout = 'auth';
 /** @var Array $data */
 ?>
-<script >
-    function verifyEmail() {
-        var email = document.getElementById("email").value;
-
-        if (email.includes("@") ) {
-            document.getElementById("messageEmail").innerHTML = "";
-        }
-        else{
-            document.getElementById("messageEmail").innerHTML = "Invalid email adress!";
-        }
-
-    }
-
-
-    function verifyPassword() {
-        var pw = document.getElementById("password").value;
-
-
-
-        if(pw.length < 8) {
-            document.getElementById("messagePswd").innerHTML = "Password length must be atleast 8 characters!";
-        }
-        else if (pw.length > 15){
-            document.getElementById("messagePswd").innerHTML = "Password length must be less than 15 characters!";
-
-        }
-       else {
-            document.getElementById("messagePswd").innerHTML = "";
-        }
-
-    }
-    function checkConfPass() {
-        var pw = document.getElementById("password").value;
-        var cpw = document.getElementById("cpassword").value;
-
-
-
-        if (pw !== cpw) {
-            document.getElementById("messageCpswd").innerHTML = "Passwords doesnt match!";
-            return false;
-        } else
-            document.getElementById("messageCpswd").innerHTML = "";
-
-    }
-</script>
-
+<script src="/Users/axel/VAII_Semestralka/public/js/script.js"></script>
 <div class="container">
     <div class="row">
         <div class="col-sm-3 col-md-7 col-lg-5 mx-auto">
