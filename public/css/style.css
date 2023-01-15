@@ -9,13 +9,17 @@
     alignment: center;
 }
 body {
-    background-image: url("https://img.freepik.com/free-vector/gradient-futuristic-cyber-background_23-2149116407.jpg?w=1480&t=st=1665611800~exp=1665612400~hmac=71cbb5a12ef594b0e9bc5f090d945b563a6b64970ada9a38d48576db54e4ef5a");
+    background-image: url("https://wallpaperboat.com/wp-content/uploads/2019/06/black-screen-02.jpg");
     background-size: cover ;
     background-repeat: repeat;
+
     height: 100vh;
     width: 100vw;
     color: darkgrey ;
     overflow: scroll;
+}
+.table-prispevky {
+    color: white;
 }
 header {
     position: fixed;
@@ -27,6 +31,7 @@ header {
 .container , .text ,.projekty{
     padding-top: 5em;
 }
+
 .text h1 {
     color: goldenrod;   
     font-weight: bolder;
@@ -124,6 +129,10 @@ h1 ,h3{
 }
 #login_modal .form_modal:hover  {
     border-color: red;
+}
+button:active, button:hover {
+    background-color: #007bff;
+    color: silver;
 }
 html {
     box-sizing: border-box;

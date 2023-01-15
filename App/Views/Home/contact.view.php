@@ -1,6 +1,4 @@
 
-
-
 <div>
 
 <div class="kontakt_text">
@@ -33,8 +31,6 @@
 
                 </ul>
             </div>
-
-
         </div>
     </div>
 </div>
@@ -48,28 +44,34 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="md-form mb-2">
-                            <label for="name"></label><input type="text" id="name" name="name" class="form-control" placeholder="Name">
+                            <label for="name"></label><input type="text" id="firstName" name="name" class="form-control" placeholder="Your name..">
                         </div>
                     </div>
 
                     <div class="col-md-3">
                         <div class="md-form mb-2">
-                            <label for="email"></label><input type="text" id="email" name="email" class="form-control" placeholder="email@gmail.com">
+                            <label for="lastname"></label><input type="text" id="lastname" name="lastname" class="form-control" placeholder="Your last name..">
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="md-form mb-4">
-                            <label for="subject"></label><input type="text" id="subject" name="subject" class="form-control" placeholder="Subject">
+                    <div class="col-md-3 mb-4">
+                        <label for="subject"></label><input type="text" id="subject" name="subject" class="form-control" placeholder="Subject">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="md-form mb-2">
+                            <textarea id="subject" name="subject" placeholder="Write something.."style="height: 80px; width: 215px" ></textarea>
                         </div>
-                        <button type="button" class="btn btn-success w-100" >Submit</button>
                     </div>
                 </div>
-
-
-
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="md-form mb-2">
+                            <button type="button" class="btn btn-success w-100" >Submit</button>
+                        </div>
+                    </div>
+                </div>
 
 
             </form>

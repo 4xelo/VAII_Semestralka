@@ -14,13 +14,15 @@ class ProjectsController extends \App\Core\AControllerBase
      */
     public function authorize($action)
     {
+
         switch ($action) {
             case "edit":
             case "create":
             case "store":
             case "delete":
-                return $this->app->getAuth()->isLogged();
+                return ($this->app->getAuth()->isLogged() && $this->app->getAuth()->isSpravca());
 
+                //return $this->app->getAuth()->isLogged();
         }
         return true;
     }

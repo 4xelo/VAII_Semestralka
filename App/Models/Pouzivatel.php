@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-class Admin extends \App\Core\Model
+class Pouzivatel extends \App\Core\Model
 {
 
     protected $id;
     protected $email;
     protected $login;
     protected $password;
-
+    protected $jeSpravca;
     /**
      * @return mixed
      */
@@ -72,6 +72,21 @@ class Admin extends \App\Core\Model
     public function setEmail($email): void
     {
         $this->email = $email;
+    }
+    /**
+     * @return mixed
+     */
+    public function getSpravca()
+    {
+        return $this->jeSpravca;
+    }
+
+    /**
+     * @param mixed $jeSpravca
+     */
+    public function setSpravca(mixed $jeSpravca): void
+    {
+        $this->jeSpravca = $jeSpravca ;
     }
 
 }

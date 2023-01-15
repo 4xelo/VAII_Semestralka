@@ -47,6 +47,23 @@ function clean(firstText, secondText, thirdText, forthText,fifthText,sixthText) 
     sixthText.children().remove();
 
 }
+
+function activateButton() {
+
+    var button =  $('.nav-item button');
+
+    button.on('mousedown', function(){
+        $('.nav-item button').removeClass('active');
+        $(this).addClass('active');
+    });
+    button.on('mouseup', function(){
+        $(this).removeClass('active');
+    });
+    button.hover(function(){
+        $(this).toggleClass('active');
+    });
+}
+
 function showWho() {
     let firstText = $("div#firstText");
     let secondText = $("div#secondText");
@@ -105,8 +122,8 @@ function showWhat() {
 
     $("div#second").text("Ux/ui design");
     secondText.append("<li>Wireframes & Prototypes</li>");
-    secondText.append("<li>User Experience Design</li>");
-    secondText.append("<li>User Interface Design</li>");
+    secondText.append("<li>Pouzivatel Experience Design</li>");
+    secondText.append("<li>Pouzivatel Interface Design</li>");
     secondText.append("<li>Interaction Design</li>");
 
     $("div#third").text("Software development");

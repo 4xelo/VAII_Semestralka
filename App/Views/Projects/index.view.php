@@ -1,11 +1,8 @@
 
 <?php
 /** @var \App\Core\IAuthenticator $auth */
+/** @var \App\Models\Pouzivatel $user */
 ?>
-?>
-
-
-
 
 <div class="modal fade" id="login" tabindex="-1" aria-labelledby=".nav" aria-hidden="true">
     <div class="modal-dialog">
@@ -37,7 +34,7 @@
 
 <div class="projekty">
     <div >
-        <?php if ($auth->isLogged()) { ?>
+        <?php if ($auth->isLogged() && $auth->isSpravca()) { ?>
         <a href="?c=projects&a=create " class="btn btn-success">Create project</a>
         <?php } ?>
     </div>
@@ -61,7 +58,7 @@
                 </li>
 
 
-                <?php if ($auth->isLogged()) { ?>
+                <?php if ($auth->isLogged() && $auth->isSpravca()) { ?>
                     <li>
                         <a href="?c=projects&a=delete&id=<?php echo $project->getId() ?>"  class="btn btn-danger  ">Delete</a>
                     </li>

@@ -48,4 +48,7 @@ class HomeController extends AControllerBase
     public function about() {
         return $this->html();
     }
+    public function prispevok() {
+        return $this->html();
+    }
 }
