@@ -3,6 +3,7 @@
 namespace App\Auth;
 use App\Core\DB\Connection;
 use App\Core\IAuthenticator;
+use App\Models\Login;
 use App\Models\Pouzivatel;
 
 class LoginAuthentificator implements IAuthenticator
@@ -21,7 +22,7 @@ class LoginAuthentificator implements IAuthenticator
         $user = Pouzivatel::getAll('login = ?', [$login]);
 
         if (count($user) == 0) {
-            echo "Zle heslo\n";
+            echo"<script>alert('Pouzivatel s danym loginom neexistuje!');</script>";
             return false;
         }
 
@@ -29,8 +30,16 @@ class LoginAuthentificator implements IAuthenticator
             $_SESSION['user_login'] = $user[0]->getLogin();
             $_SESSION['user_id'] = $user[0]->getId();
             $_SESSION['user_type'] = $user[0]->getSpravca();
+            echo "success";
+
+            $time = new Login();
+
+            $time->setPouzivatel($_SESSION['user_id']);
+            $time->save();
+
             return true;
         } else {
+            echo"<script>alert('Nespravne heslo!');</script>";
             return false;
         }
     }

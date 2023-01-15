@@ -10,16 +10,16 @@
                 <li class="nav-item mb-2"> through innovation and expertise we deliver exceptional solutions.</li>
                 <div class="col-12 col-md-2 mb-3">
                     <div class="nav-item">
-                        <button class="btn btn-lg btn-block" onclick="showWho(), activateButton() "> Kto sme?</button>
+                        <button class="btn btn-lg btn-block text-left" style="width: 200px" onclick="showWho(), activateButton() "> Kto sme?</button>
                     </div>
                     <div class="nav-item">
-                        <button class="btn btn-lg btn-block" onclick="showWhat(), activateButton()"> Co robime?</button>
+                        <button class="btn btn-lg btn-block text-left" style="width: 200px" onclick="showWhat(), activateButton()"> Co robime?</button>
                     </div>
                     <div class="nav-item">
-                        <button class="btn btn-lg btn-block " onclick="showWhy(), activateButton()"> Preco sme najlepsia volba?</button>
+                        <button class="btn btn-lg btn-block text-left" style="width: 200px" onclick="showWhy(), activateButton()"> Preco sme najlepsia volba?</button>
                     </div>
                     <div class="nav-item">
-                        <button class="btn btn-lg btn-block" onclick="showHow(), activateButton()"> Ako spolupracujeme?</button>
+                        <button class="btn btn-lg btn-block text-left"style="width: 200px" onclick="showHow(), activateButton()"> Ako spolupracujeme?</button>
                     </div>
                 </div>
             </div>

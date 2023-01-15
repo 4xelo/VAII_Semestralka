@@ -7,6 +7,7 @@ use App\Core\Responses\JsonResponse;
 use App\Core\Responses\RedirectResponse;
 use App\Core\Responses\Response;
 use App\Core\Responses\ViewResponse;
+use App\Models\Pouzivatel;
 
 /**
  * Class AControllerBase
@@ -20,6 +21,11 @@ abstract class AControllerBase
      * @var App
      */
      protected App $app;
+    /**
+     * Reference to Pouzivatel object instance
+     * @var Pouzivatel
+     */
+     protected Pouzivatel $user;
 
     /**
      * Returns controller name (without Controller prefix)
@@ -48,7 +54,14 @@ abstract class AControllerBase
     {
         $this->app = $app;
     }
-
+    /**
+     * Method for injecting App object
+     * @param App $app
+     */
+    public function setUser(Pouzivatel $user)
+    {
+        $this->user = $user;
+    }
     /**
      * Helper method for returning response type ViewResponse
      * @param null $data

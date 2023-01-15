@@ -57,6 +57,9 @@ header {
     font-size: 14px;
     padding-left: 50px;
 }
+.nav-item .button {
+    text-align: left;
+}
 .nadpis {
     margin-top: 1em;
 }
