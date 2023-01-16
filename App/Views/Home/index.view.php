@@ -1,13 +1,15 @@
 
 
 <div class="kontakt_text">
-    <div class="container-fluid mt-auto p-2">
-        <div class="row ">
-            <div class="col-12 col-md-6 mb-3">
+    <div class = "container-fluid mt-auto p-2">
+        <div class = "row ">
+            <div class = "col-12 col-md-6 mb-3">
                 <h2>Embrace Technology</h2>
 
+                <ul>
+                    <li class = "nav-item mb-2"> through innovation and expertise we deliver exceptional solutions.</li>
+                </ul>
 
-                <li class="nav-item mb-2"> through innovation and expertise we deliver exceptional solutions.</li>
                 <div class="col-12 col-md-2 mb-3">
                     <div class="nav-item">
                         <button class="btn btn-lg btn-block text-left" style="width: 200px" onclick="showWho(), activateButton() "> Kto sme?</button>
@@ -19,24 +21,24 @@
                         <button class="btn btn-lg btn-block text-left" style="width: 200px" onclick="showWhy(), activateButton()"> Preco sme najlepsia volba?</button>
                     </div>
                     <div class="nav-item">
-                        <button class="btn btn-lg btn-block text-left"style="width: 200px" onclick="showHow(), activateButton()"> Ako spolupracujeme?</button>
+                        <button class="btn btn-lg btn-block text-left" style="width: 200px" onclick="showHow(), activateButton()"> Ako spolupracujeme?</button>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 mb-2">
-                <h1 id ="homeHeader"></h1>
+                <h1 id = "homeHeader"> "" </h1>
                 <div id = "first" style="font-size: 18px"></div>
                 <div id = "firstText" style="font-size: 12px"></div>
-                <div id = "second"style="font-size: 18px"></div>
-                <div id = "secondText"style="font-size: 12px"></div>
-                <div id = "third"style="font-size: 18px"></div>
-                <div id = "thirdText"style="font-size: 12px"></div>
-                <div id = "forth"style="font-size: 18px"></div>
-                <div id = "forthText"style="font-size: 12px"></div>
-                <div id = "fifth"style="font-size: 18px"></div>
-                <div id = "fifthText"style="font-size: 12px"></div>
-                <div id = "sixth"style="font-size: 18px"></div>
-                <div id = "sixthText"style="font-size: 12px"></div>
+                <div id = "second" style="font-size: 18px"></div>
+                <div id = "secondText" style="font-size: 12px"></div>
+                <div id = "third" style="font-size: 18px"></div>
+                <div id = "thirdText" style="font-size: 12px"></div>
+                <div id = "forth" style="font-size: 18px"></div>
+                <div id = "forthText" style="font-size: 12px"></div>
+                <div id = "fifth" style="font-size: 18px"></div>
+                <div id = "fifthText" style="font-size: 12px"></div>
+                <div id = "sixth" style="font-size: 18px"></div>
+                <div id = "sixthText" style="font-size: 12px"></div>
             </div>
         </div>
 
