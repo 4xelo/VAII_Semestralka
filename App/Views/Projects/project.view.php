@@ -13,7 +13,7 @@ use App\Models\Project;
         <h3 id="projectTitle" class="text-center project-name"><?php echo $data->getTitle(); ?></h3>
     </div>
     <div class="col-md-12 text-center">
-        <img id="projectImage" src="<?php echo $data->getImg(); ?>" style="width: 400px; height: 400px;  alt="Project Image" class="img-fluid project-image">
+        <img id="projectImage" src="<?php echo $data->getImg(); ?>" style= "width: 400px; height: 400px;" alt="..."  class="img-fluid project-image">
     </div>
     <div class="col-md-4 offset-md-4">
         <p id="projectDescription" class="project-description">
@@ -24,6 +24,5 @@ use App\Models\Project;
         </div>
     </div>
 </div>
-
 </div>
 </div>

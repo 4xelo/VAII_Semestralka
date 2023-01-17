@@ -62,6 +62,10 @@ class LoginAuthentificator implements IAuthenticator
      */
     public function register($email, $login, $pass, $cpass): bool
     {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo"<script>alert('Zly format emailu.');</script>";
+            return false;
+        }
 
         $maily = Pouzivatel::getAll('email = ?', [$email]);
         $loginy = Pouzivatel::getAll('login = ?', [$login]);
@@ -74,10 +78,15 @@ class LoginAuthentificator implements IAuthenticator
             echo"<script>alert('Zadany login uz pouziva niekto iny!');</script>";
             return false;
         }
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            echo"<script>alert('Zly format emailu.');</script>";
+
+        if(!preg_match('/^[a-zA-Z][0-9a-zA-Z_]{2,20}[0-9a-zA-Z]$/',$login)) {//musi zacinat znakom, mat aspon 20 znakov
+            echo "<script>alert('Zly format loginu.');</script>";
             return false;
         }
+        if(!preg_match('/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/',$pass)) { // aspon jedno velke pismeno, aspon jedno cislo, 8 znakov minimalne
+            return true;
+        }
+
         if ($cpass !== $pass) {
             echo"<script>alert('Hesla sa nezhoduju.');</script>";
             return false;

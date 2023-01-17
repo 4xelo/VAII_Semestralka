@@ -16,15 +16,16 @@ use App\Models\Project;
         <p id="projectDescription" class="project-description">
             <?php echo $data->getText() ?>
         </p>
-        <a href="?c=prispevoks" class="button"><- Go Back</a>
+        <a href="?c=prispevoks" class="button"> Go Back</a>
     </div>
 </div>
 
 
 
 </div>
-
+</div>
 </body>
 </html>
 
-</div>
+
+

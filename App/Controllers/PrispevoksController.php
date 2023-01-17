@@ -49,15 +49,37 @@ class PrispevoksController extends AControllerBase
 
         $prispevok = ( $id ? Prispevok::getOne($id) : new Prispevok());
         if ($this->request()->getValue('meno')) {
-            $prispevok->setMeno($this->request()->getValue('meno'));
-            if ($this->request()->getValue('priezvisko')) {
-                $prispevok->setPriezvisko($this->request()->getValue('priezvisko'));
+            $meno = $this->request()->getValue('meno');
+            if(!preg_match('/^[a-zA-Z]{3,15}[a-zA-Z]$/',$meno)) {//musi zacinat znakom, mat aspon 15 znakov
+                echo "<script>alert('Zly format mena.');</script>";
+                return false;
             }
+            $prispevok->setMeno($meno);
+            
+            if ($this->request()->getValue('priezvisko')) {
+                $priezvisko = $this->request()->getValue('priezvisko');
+                if(!preg_match('/^[a-zA-Z]{3,20}[a-zA-Z]$/',$priezvisko)) {//musi zacinat znakom, mat aspon 15 znakov
+                    echo "<script>alert('Zly format priezviska.');</script>";
+                    return false;
+                }
+                $prispevok->setPriezvisko($priezvisko);
+            }
+            
             if ($this->request()->getValue('subject')) {
-                $prispevok->setSubject($this->request()->getValue('subject'));
+                $predmet = $this->request()->getValue('subject');
+                if(!preg_match('/^[a-zA-Z][0-9a-zA-Z_]{2,50}[0-9a-zA-Z]$/',$predmet)) {//musi zacinat znakom, max 50 znakov
+                    echo "<script>alert('Zly format predmetu.');</script>";
+                    return false;
+                }
+                $prispevok->setSubject($predmet);
             }
             if ($this->request()->getValue('text')) {
-                $prispevok->setText($this->request()->getValue('text'));
+                $question = $this->request()->getValue('text');
+                if(!preg_match('/^[a-zA-Z][0-9a-zA-Z_]{2,250}[0-9a-zA-Z]$/',$question)) {//musi zacinat znakom, max 250 znakov
+                    echo "<script>alert('Zly format otazky.');</script>";
+                    return false;
+                }
+                $prispevok->setText($question);
             }
         } else {
             return $this->redirect("?c=prispevoks&a=create");

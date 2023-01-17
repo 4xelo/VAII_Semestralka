@@ -84,7 +84,6 @@ class ProjectsController extends \App\Core\AControllerBase
      */
     public function filter() :JsonResponse
     {
-
         $title = $this->request()->getValue('title');
 
         if ($title == null) {

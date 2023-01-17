@@ -1,6 +1,6 @@
-
-
-
+/**
+ * funkcia trivialne zistuje ci pouzivatel zadal email alebo nie
+ */
 function verifyEmail() {
     var email = document.getElementById("email").value;
 
@@ -13,6 +13,9 @@ function verifyEmail() {
 
 }
 
+/**
+ * funkcia verifikuje ci je heslo vacsie ako 8 a mensie ako 15 znakov
+ */
 function verifyPassword() {
     var pw = document.getElementById("password").value;
 
@@ -28,6 +31,11 @@ function verifyPassword() {
     }
 
 }
+
+/**
+ * funkcia kontroluje klientovi zahuci ak by nezadal rovnake hesla
+ * @returns {boolean}
+ */
 function checkConfPass() {
     var pw = document.getElementById("password").value;
     var cpw = document.getElementById("cpassword").value;
@@ -38,6 +46,16 @@ function checkConfPass() {
     } else
         document.getElementById("messageCpswd").innerHTML = "";
 }
+
+/**
+ * funkcia ktora bere parametre domovskej stranky a vycisti ich, znizenie duplicity kodu
+ * @param firstText
+ * @param secondText
+ * @param thirdText
+ * @param forthText
+ * @param fifthText
+ * @param sixthText
+ */
 function clean(firstText, secondText, thirdText, forthText,fifthText,sixthText) {
     firstText.children().remove();
     secondText.children().remove();
@@ -48,6 +66,9 @@ function clean(firstText, secondText, thirdText, forthText,fifthText,sixthText) 
 
 }
 
+/**
+ * funkcia nabije tlacitko aby svietilo ked nan klikneme
+ */
 function activateButton() {
 
     var button =  $('.nav-item button');
@@ -64,6 +85,9 @@ function activateButton() {
     });
 }
 
+/**
+ * funkcia vypise na domovsku stranu text
+ */
 function showWho() {
     let firstText = $("div#firstText");
     let secondText = $("div#secondText");
@@ -101,6 +125,9 @@ function showWho() {
     sixthText.append("<li>We accept challenges, manage risks and timely deliver our commitments.</li>");
 
 }
+/**
+ * funkcia vypise na domovsku stranu text
+ */
 function showWhat() {
 
     let firstText = $("div#firstText");
@@ -147,6 +174,9 @@ function showWhat() {
     $("div#sixth").html("");
 
 }
+/**
+ * funkcia vypise na domovsku stranu text
+ */
 function showWhy() {
     let firstText = $("div#firstText");
     let secondText = $("div#secondText");
@@ -183,6 +213,10 @@ function showWhy() {
     fifthText.append("<li>On time delivery within budget.</li>");
     $("div#sixth").html("");
 }
+
+/**
+ * funkcia vypise na domovsku stranu text
+ */
 function showHow() {
     let firstText = $("div#firstText");
     let secondText = $("div#secondText");
@@ -202,6 +236,10 @@ function showHow() {
 
 }
 
+/**
+ * asynchronna funkcia ktora filtruje tituly Projektov podla nazvu, kontroluje ci filtruje uzivatel alebo admin
+ * @returns {Promise<void>}
+ */
 async function filterProjects() {
     let input = document.querySelector("#filter-input");
     let tableBody = document.querySelector("tbody");
@@ -252,6 +290,10 @@ async function filterProjects() {
      });
 }
 
+/**
+ * asynchronna funkcia ktora vracia posledny cas uzivateloveho prihlasenia
+ * @returns {Promise<void>}
+ */
 async function setHeader() {
 
         await fetch("?c=login&a=getLoginTime")
@@ -280,31 +322,31 @@ async function setHeader() {
 
 }
 
-async function zoradPodlaMena() {
-    let tableBody = document.querySelector("tbody");
-
-    await fetch("?c=prispevoks&a=zoradZ&meno=").then(response => {
-        if (!response.ok) {
-            return response.text();
-        }
-        return response.json();
-    }).then(data => {
-
-        tableBody.innerHTML = "";
-        $prispevkos = data;
-        $prispevkos.forEach(prispevok => {
-
-            const row = document.createElement("tr");
-            row.innerHTML = `
-                <th>
-                <a ${prispevok.id}" class="title-link">Q${prispevok.id}         <th>
-                     <a href="?c=prispevoks&a=delete&id=${prispevok.id}" class="btn btn-danger">Delete</a>
-                     <a href="?c=prispevoks&a=edit&id=${prispevok.id}" class="btn btn-info">Edit</a>
-                </th>
-             `;
-            tableBody.appendChild(row);
-
-        });
-        })
-
-}
+// async function zoradPodlaMena() {
+//     let tableBody = document.querySelector("tbody");
+//
+//     await fetch("?c=prispevoks&a=zoradZ&meno=").then(response => {
+//         if (!response.ok) {
+//             return response.text();
+//         }
+//         return response.json();
+//     }).then(data => {
+//
+//         tableBody.innerHTML = "";
+//         $prispevkos = data;
+//         $prispevkos.forEach(prispevok => {
+//
+//             const row = document.createElement("tr");
+//             row.innerHTML = `
+//                 <th>
+//                 <a ${prispevok.id}" class="title-link">Q${prispevok.id}         <th>
+//                      <a href="?c=prispevoks&a=delete&id=${prispevok.id}" class="btn btn-danger">Delete</a>
+//                      <a href="?c=prispevoks&a=edit&id=${prispevok.id}" class="btn btn-info">Edit</a>
+//                 </th>
+//              `;
+//             tableBody.appendChild(row);
+//
+//         });
+//         })
+//
+// }

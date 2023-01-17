@@ -63,10 +63,12 @@ class AuthController extends AControllerBase
         $formData = $this->app->getRequest()->getPost();
         $registered = null;
         if (isset($formData['submit'])) {
-            $registered = $this->app->getAuth()->register($formData['email'], $formData['login'],$formData['password'], $formData['cpassword']);
+
+            $registered = $this->app->getAuth()->register($formData['email'], $formData['login'], $formData['password'], $formData['cpassword']);
             if ($registered) {
                 return $this->redirect('?c=auth&a=login');
             }
+
         }
 
         return $this->html();

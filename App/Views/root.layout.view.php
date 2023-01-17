@@ -54,8 +54,8 @@
                         <ul>
                             <?php if ($auth->isLogged()) { ?>
 
-                                <a  style="margin-right: 10px"  ">Vitaj <?php echo $_SESSION['user_login']; {} ?>, </a>
-                                <a id="casText"> </a>
+                                <li  style="margin-right: 10px"> Vitaj <?php echo $_SESSION['user_login']; {} ?>, </li>
+                                <li id="casText"> </li>
 
                             <?php } ?>
 
