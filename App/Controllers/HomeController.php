@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Core\AControllerBase;
+use App\Core\Responses\Response;
+use App\Models\Pouzivatel;
 
 /**
  * Class HomeController
@@ -49,6 +51,20 @@ class HomeController extends AControllerBase
         return $this->html();
     }
     public function prispevok() {
+        return $this->html();
+    }
+
+    /**
+     * @param $userId
+     * @return Response
+     * @throws \Exception
+     */
+    public function getId($userId) : Response
+    {
+        $login = Pouzivatel::getOne($userId);
+        if ($login !== null) {
+            return $this->json($login->getLogin());
+        }
         return $this->html();
     }
 }

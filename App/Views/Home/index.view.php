@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 mb-2">
-                <h1 id = "homeHeader"> "" </h1>
+                <h1 id = "homeHeader">  </h1>
                 <div id = "first" style="font-size: 18px"></div>
                 <div id = "firstText" style="font-size: 12px"></div>
                 <div id = "second" style="font-size: 18px"></div>

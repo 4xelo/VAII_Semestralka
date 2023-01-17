@@ -44,6 +44,10 @@ class DebugStatement
      */
     public function __call($name, $arguments)
     {
-        return $this->stmt->{$name}(...$arguments);
+       try {
+           return $this->stmt->{$name}(...$arguments);
+       } catch (\Error $e) {
+           throw $e;
+       }
     }
 }

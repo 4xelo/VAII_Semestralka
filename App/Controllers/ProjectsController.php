@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Core\Responses\JsonResponse;
 use App\Core\Responses\Response;
 use App\Models\Project;
+use PDOException;
 
 class ProjectsController extends \App\Core\AControllerBase
 {
@@ -49,24 +50,38 @@ class ProjectsController extends \App\Core\AControllerBase
     public function project() {
         $id = $this->request()->getValue('id');
 
-        $project = Project::getOne($id);
+        try {
+            $project = Project::getOne($id);
+        }
+        catch (PDOException|\Exception $e)  {
+            $project = null;
+        }
 
-        return $this->html($project);
+        if ($project != null) {
+            return $this->html($project);
+        } else {
+            return $this->redirect('?c=projects');
+        }
+
+
     }
 
     public function delete() {
-
-
         $id = $this->request()->getValue('id');
-
 
         $projectToDelete = Project::getOne($id);
         if ($projectToDelete) {
+            $img = $projectToDelete->getImg();
+            unlink("public/images".$img);
             $projectToDelete->delete();
         }
         return $this->redirect("?c=projects");
     }
 
+    /** vracia vyfiltrovane zaznamy projektov
+     * @return JsonResponse
+     * @throws \Exception
+     */
     public function filter() :JsonResponse
     {
 
@@ -79,8 +94,9 @@ class ProjectsController extends \App\Core\AControllerBase
             //$title =  $title . '%'; ofiko
             $filteredProjects  = Project::getAll('title LIKE ?', [$title]);
         }
+        $spravca = (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 1);
 
-        return $this->json(['data' => $filteredProjects]);
+        return $this->json(['data' => $filteredProjects, 'spravca' => $spravca]);
     }
 
     public function store() {
@@ -103,6 +119,10 @@ class ProjectsController extends \App\Core\AControllerBase
                 $path = "public/images/".$file_name;
                 move_uploaded_file($file_tmp,$path);
                 $project->setImg($path);
+            } else {
+                $file_name = "bloc_logo_small_1.png";
+                $path = "public/images/".$file_name;
+                $project->setImg($path);
             }
         } else {
             return $this->redirect("?c=projects&a=create");
@@ -123,14 +143,6 @@ class ProjectsController extends \App\Core\AControllerBase
         $projectToEdit = Project::getOne($id);
         return $this->html($projectToEdit, viewName: 'create.form');
     }
-    public function loadProject(): JsonResponse {
 
-        $id = $this->request()->getValue('id');
-
-        $project = Project::getOne($id);
-
-        return $this->json(['title' => $project->getTitle(), 'imgPath' => $project->getImg(), 'description' => $project->getPrjdesc(), 'techn' => $project->getTechnologies()]);
-
-    }
 
 }

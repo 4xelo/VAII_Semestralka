@@ -33,7 +33,7 @@ class Prispevok extends Model {
      */
     public function getMeno()
     {
-        return $this->login;
+        return $this->meno;
     }
 
     /**
@@ -71,7 +71,7 @@ class Prispevok extends Model {
     /**
      * @param mixed subject
      */
-    public function setEmail($subject): void
+    public function setSubject($subject): void
     {
         $this->subject = $subject;
     }

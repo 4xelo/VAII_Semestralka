@@ -47,18 +47,16 @@
                                 <a class="nav-link" href="?c=home&a=contact"> Kontakt</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="?c=home&a=prispevok"> Prispevky</a>
+                                <a class="nav-link" href="?c=prispevoks"> Prispevky</a>
                             </li>
                         </ul>
                         <a class="navbar-brand me-5"> COMPOTE </a>
                         <ul>
                             <?php if ($auth->isLogged()) { ?>
-                                    <li>
-                                        <a class="navbar-text">Vitaj <?php echo $_SESSION['user_login']; {} ?> </a>
-                                    </li>
-                                <li>
-                                    <a id="casText" class="navbar-text"> </a>
-                                </li>
+
+                                <a  style="margin-right: 10px"  ">Vitaj <?php echo $_SESSION['user_login']; {} ?>, </a>
+                                <a id="casText"> </a>
+
                             <?php } ?>
 
                         </ul>

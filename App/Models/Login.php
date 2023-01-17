@@ -18,11 +18,11 @@ class Login extends Model {
     }
 
     /**
-     * @param mixed $idLogu
+     * @param mixed $id
      */
-    public function setId($idLogu): void
+    public function setId($id): void
     {
-        $this->id = $idLogu;
+        $this->id = $id;
     }
 
     /**

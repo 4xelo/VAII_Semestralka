@@ -1,10 +1,14 @@
 <?php
 
 namespace App\Auth;
+use App\Config\Configuration;
 use App\Core\DB\Connection;
 use App\Core\IAuthenticator;
 use App\Models\Login;
 use App\Models\Pouzivatel;
+use PDO;
+use \App\Core\DB;
+use PDOException;
 
 class LoginAuthentificator implements IAuthenticator
 {

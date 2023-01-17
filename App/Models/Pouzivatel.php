@@ -18,6 +18,7 @@ class Pouzivatel extends \App\Core\Model
         return $this->id;
     }
 
+
     /**
      * @param mixed $id
      */

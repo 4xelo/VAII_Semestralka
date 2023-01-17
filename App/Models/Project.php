@@ -27,6 +27,9 @@ class Project extends Model
     {
         $this->id = $id;
     }
+    public function getProject() {
+        return Project::getAll("id = ?", [$this->id]);
+    }
 
     /**
      * @return mixed
@@ -91,6 +94,4 @@ class Project extends Model
     {
         $this->technologies = $technologies;
     }
-
-
 }

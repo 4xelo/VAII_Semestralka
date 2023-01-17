@@ -216,19 +216,35 @@ async function filterProjects() {
             .then(response => response)//nevracalo mi response kody dobre mozno kvoli tomu ze to je GET
             .then(data => {
                 let projects = data.data;
+                let spravca;
+                if (data.hasOwnProperty('spravca')) {
+                    spravca = data.spravca;
+                }
                 tableBody.innerHTML = "";
-                projects.forEach(project => {
-                    const row = document.createElement("tr");
-                    row.innerHTML = `
+                if (spravca === true) {
+                    projects.forEach(project => {
+                        const row = document.createElement("tr");
+                        row.innerHTML = `
                 <td>
                 <a href="?c=projects&a=project&id=${project.id}" class="title-link">${project.title}</a></td>
-                <td>
+                <td> 
                      <a href="?c=projects&a=delete&id=${project.id}" class="btn btn-danger">Delete</a>
                      <a href="?c=projects&a=edit&id=${project.id}" class="btn btn-info">Edit</a>
                 </td>
              `;
-                    tableBody.appendChild(row);
-                });
+                        tableBody.appendChild(row);
+                    });
+                }else {
+                    projects.forEach(project => {
+                        const row = document.createElement("tr");
+                        row.innerHTML = `
+                <td>
+                <a href="?c=projects&a=project&id=${project.id}" class="title-link">${project.title}</a></td>
+                    <td></td>
+             `;
+                        tableBody.appendChild(row);
+                    });
+                }
 
             }).catch(function (err) {
                 console.log(err);
@@ -261,4 +277,34 @@ async function setHeader() {
             }).catch(function (error) {
             console.log(error);
      });
+
+}
+
+async function zoradPodlaMena() {
+    let tableBody = document.querySelector("tbody");
+
+    await fetch("?c=prispevoks&a=zoradZ&meno=").then(response => {
+        if (!response.ok) {
+            return response.text();
+        }
+        return response.json();
+    }).then(data => {
+
+        tableBody.innerHTML = "";
+        $prispevkos = data;
+        $prispevkos.forEach(prispevok => {
+
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <th>
+                <a ${prispevok.id}" class="title-link">Q${prispevok.id}         <th>
+                     <a href="?c=prispevoks&a=delete&id=${prispevok.id}" class="btn btn-danger">Delete</a>
+                     <a href="?c=prispevoks&a=edit&id=${prispevok.id}" class="btn btn-info">Edit</a>
+                </th>
+             `;
+            tableBody.appendChild(row);
+
+        });
+        })
+
 }

@@ -10,6 +10,10 @@ class LoginController extends AControllerBase {
     {
         return $this->html();
     }
+
+    /**Vytiahnem najprv vsetky loginy daneho uzivatela, vratim posledny-> ten je najcersvejsi
+     * @return \App\Core\Responses\JsonResponse
+     */
     public function getLoginTime(): \App\Core\Responses\JsonResponse
     {
         $userId = $_SESSION['user_id'];
@@ -19,8 +23,10 @@ class LoginController extends AControllerBase {
         } catch (\Exception $e) {
             return $this->json(['error' => $e->getMessage()]);
         }
+
         try {
             $login = Login::getOne($loginy[count($loginy)-1]->getId());
+
         } catch (\Exception $e) {
             return $this->json(['error' => $e->getMessage()]);
         }
