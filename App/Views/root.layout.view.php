@@ -1,6 +1,8 @@
 <?php
 /** @var string $contentHTML */
 /** @var \App\Core\IAuthenticator $auth */
+
+
 ?>
 <!DOCTYPE html>
 <head>
@@ -23,7 +25,7 @@
     <script src="/public/js/script.js"></script>
 
 </head>
-<body>
+<body onload=" setHeader()">
 <nav class="navbar navbar-expand-sm bg-light">
     <header>
         <div>
@@ -49,16 +51,30 @@
                             </li>
                         </ul>
                         <a class="navbar-brand me-5"> COMPOTE </a>
+                        <ul>
+                            <?php if ($auth->isLogged()) { ?>
+                                    <li>
+                                        <a class="navbar-text">Vitaj <?php echo $_SESSION['user_login']; {} ?> </a>
+                                    </li>
+                                <li>
+                                    <a id="casText" class="navbar-text"> </a>
+                                </li>
+                            <?php } ?>
+
+                        </ul>
 
                         <ul class="navbar nav ms-auto">
+
                             <?php if ($auth->isLogged()) { ?>
                             <li class="container-fluid justify-content-end">
                                 <a class="nav-link" href="?c=auth&a=logout">Logout</a>
                             </li>
                             <?php } else { ?>
-                            <li class="container-fluid justify-content-end">
+                            <li class="container-fluid justify-content">
                                 <a class="nav-link" href="?c=auth&a=register">Register</a>
+                                <a class="nav-link" href="?c=auth&a=login">Login</a>
                             </li>
+
                             <?php } ?>
                         </ul>
                     </div>
