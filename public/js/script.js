@@ -203,7 +203,7 @@ function showHow() {
 }
 
 async function filterProjects() {
-    let input = document.querySelector("#title-filter");
+    let input = document.querySelector("#filter-input");
     let tableBody = document.querySelector("tbody");
 
 
@@ -211,25 +211,28 @@ async function filterProjects() {
 
         const title = e.target.value;
 
-        const response = await  fetch("?c=projects&a=filter&title=" + title).then(response => response.json());
 
-        tableBody.innerHTML = "";
-        let data = response.hasOwnProperty('data');
-        print(data);
-        console.log(data);
-        data.forEach(project => {
-            const row = document.createElement("tr");
-                row.innerHTML = `
-                <td>${project.title}</td>
+        await  $.ajax({url: '?c=projects&a=filter&title=' + title, method: 'GET', dataType: 'json'})
+            .then(response => response)//nevracalo mi response kody dobre mozno kvoli tomu ze to je GET
+            .then(data => {
+                let projects = data.data;
+                tableBody.innerHTML = "";
+                projects.forEach(project => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                <td>
+                <a href="?c=projects&a=project&id=${project.id}" class="title-link">${project.title}</a></td>
                 <td>
                      <a href="?c=projects&a=delete&id=${project.id}" class="btn btn-danger">Delete</a>
                      <a href="?c=projects&a=edit&id=${project.id}" class="btn btn-info">Edit</a>
                 </td>
              `;
-                 tableBody.appendChild(row);
-             });
-        console.log(response)
+                    tableBody.appendChild(row);
+                });
 
+            }).catch(function (err) {
+                console.log(err);
+            });
      });
 }
 
@@ -248,7 +251,6 @@ async function setHeader() {
                 }else{
                     var text = $("a#casText");
                     if(data.hasOwnProperty('time')){
-                        text.children().innerHTML = "";
                         text.innerHTML ="";
                         text.append("<a>Cas Loginu: " + data.time + "</a>")
                     }
@@ -259,9 +261,4 @@ async function setHeader() {
             }).catch(function (error) {
             console.log(error);
      });
-
-
-
-
-
 }

@@ -2,32 +2,28 @@
 
 use App\Models\Project;
 
-/** @var Array $data */
-/** @var Project $project */
+/** @var \App\Models\Project $data */
+
 
 
 ?>
 
-<div class="row">
+<div class="row" >
     <div class="col-md-12">
-        <h3 class="text-center project-name">Project Name</h3>
+        <h3 id="projectTitle" class="text-center project-name"><?php echo $data->getTitle(); ?></h3>
     </div>
-    <div class="col-md-12">
-        <img src="project.jpg" alt="Project Image" class="img-fluid project-image">
+    <div class="col-md-12 text-center">
+        <img id="projectImage" src="<?php echo $data->getImg(); ?>" style="width: 400px; height: 400px;  alt="Project Image" class="img-fluid project-image">
     </div>
     <div class="col-md-4 offset-md-4">
-        <p class="project-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id
-            metus velit. Nam in est vel velit aliquet aliquam. Sed auctor, libero
-            id malesuada dictum, ante mauris dictum ipsum, at varius augue elit
-            vitae elit.
+        <p id="projectDescription" class="project-description">
+            <?php echo $data->getPrjdesc(); ?>
         </p>
-        <div class="project-tech">
-            <span class="badge badge-primary">HTML</span>
-            <span class="badge badge-secondary">CSS</span>
-            <span class="badge badge-success">JavaScript</span>
-            <span class="badge badge-danger">PHP</span>
-            <span class="badge badge-warning">MySQL</span>
+        <div id="projectTechnologies" class="project-tech">
+            <p> <?php echo $data->getTechnologies(); ?> </p>
         </div>
     </div>
+</div>
+
+</div>
 </div>

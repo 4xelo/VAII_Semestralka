@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\App;
 use App\Core\AControllerBase;
+use App\Core\Responses\Response;
+use App\Models\Pouzivatel;
 
 
 /**
@@ -17,7 +19,7 @@ class AuthController extends AControllerBase
      *
      * @return \App\Core\Responses\RedirectResponse|\App\Core\Responses\Response
      */
-    public function index()
+    public function index() :Response
     {
         return $this->redirect('?c=auth&a=login');
     }
@@ -26,13 +28,15 @@ class AuthController extends AControllerBase
      * Login a user
      * @return \App\Core\Responses\RedirectResponse|\App\Core\Responses\ViewResponse
      */
-    public function login()
+
+    public function login() :Response
     {
         $formData = $this->app->getRequest()->getPost();
         $logged = null;
         if (isset($formData['submit'])) {
             $logged = $this->app->getAuth()->login($formData['login'], $formData['password']);
             if ($logged) {
+
                 return $this->redirect('?c=home');
             }
         }
@@ -45,7 +49,7 @@ class AuthController extends AControllerBase
      * Logout a user
      * @return \App\Core\Responses\ViewResponse|\App\Core\Responses\RedirectResponse
      */
-    public function logout()
+    public function logout(): Response
     {
         $this->app->getAuth()->logout();
         return $this->redirect('?c=home');
@@ -54,8 +58,8 @@ class AuthController extends AControllerBase
      * Register a user
      * @return \App\Core\Responses\RedirectResponse|\App\Core\Responses\ViewResponse
      */
-    public function register() {
-
+    public function register() :Response
+    {
         $formData = $this->app->getRequest()->getPost();
         $registered = null;
         if (isset($formData['submit'])) {
