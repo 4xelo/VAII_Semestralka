@@ -307,13 +307,13 @@ async function setHeader() {
                 if (typeof data === 'string') {
                     console.log("Error from server: " + data)
                 }else{
-                    var text = $("a#casText");
+                    var text = $("li#casText");
                     if(data.hasOwnProperty('time')){
                         text.innerHTML ="";
-                        text.append("<a>Cas Loginu: " + data.time + "</a>")
+                        text.append("<li>Cas Loginu: " + data.time + "</li>")
                     }
                     else{
-                        text.append("<a> Cas loginu: X</a>")
+                        text.append("<li> Cas loginu: X</li>")
                     }
                 }
             }).catch(function (error) {
